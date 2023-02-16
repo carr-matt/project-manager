@@ -23,7 +23,7 @@ const fetcher = async ({ url, method, body, json = true }) => {
       url: "/api/register",
       method: "POST",
       body: user,
-      json: false,
+      // json: false,
     });
   };
 
@@ -32,6 +32,15 @@ const fetcher = async ({ url, method, body, json = true }) => {
       url: "/api/signin",
       method: "POST",
       body: user,
-      json: false,
+      // json: false,
+    });
+  };
+
+  export const createNewProject = (name) => {
+    return fetcher({
+      url: "/api/project",
+      method: "POST",
+      body: { name },
+      json: true
     });
   };
